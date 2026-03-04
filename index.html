@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Megha Mathew's Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- App Title -->
+    <h1>☁️ Megha Mathew's Weather App</h1>
+
+    <!-- Search Bar -->
+    <div class="search-row">
+      <input type="text" id="cityInput" placeholder="Enter city, zip code, or landmark..." autocomplete="off"/>
+      <button onclick="searchWeather()">Search</button>
+    </div>
+
+    <!-- My Location Button -->
+    <button class="geo-btn" onclick="getMyLocation()">📍 Use My Current Location</button>
+
+    <!-- Error Message Box -->
+    <div class="error-box" id="errorBox"></div>
+
+    <!-- Loading Message -->
+    <div class="loader" id="loader">⏳ Fetching weather data...</div>
+
+    <!-- Main Weather Card -->
+    <div class="weather-card" id="weatherCard">
+
+      <!-- Weather Icon from OpenWeatherMap -->
+      <img id="weatherIcon" src="" alt="weather icon"/>
+
+      <!-- City Name and Country -->
+      <div class="city-name" id="cityName"></div>
+
+      <!-- Weather Description e.g. "light rain" -->
+      <div class="weather-desc" id="weatherDesc"></div>
+
+      <!-- Temperature -->
+      <div class="temperature" id="temperature"></div>
+
+      <!-- Feels Like Temperature -->
+      <div class="feels-like" id="feelsLike"></div>
+
+      <!-- Celsius / Fahrenheit Toggle Buttons -->
+      <div class="unit-toggle">
+        <button id="btnC" class="active" onclick="showCelsius()">°C</button>
+        <button id="btnF" onclick="showFahrenheit()">°F</button>
+      </div>
+
+      <!-- Stats Grid: Humidity, Wind, Visibility, Pressure -->
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="label">💧 Humidity</div>
+          <div class="value" id="humidity"></div>
+        </div>
+        <div class="stat-box">
+          <div class="label">💨 Wind Speed</div>
+          <div class="value" id="windSpeed"></div>
+        </div>
+        <div class="stat-box">
+          <div class="label">👁️ Visibility</div>
+          <div class="value" id="visibility"></div>
+        </div>
+        <div class="stat-box">
+          <div class="label">🔵 Pressure</div>
+          <div class="value" id="pressure"></div>
+        </div>
+      </div>
+
+      <!-- Sunrise and Sunset Times -->
+      <div class="sun-row">
+        <div class="sun-item">
+          <div class="label">🌅 Sunrise</div>
+          <div class="value" id="sunrise"></div>
+        </div>
+        <div class="sun-item">
+          <div class="label">🌇 Sunset</div>
+          <div class="value" id="sunset"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Smart Tips Card -->
+    <div class="tips-card" id="tipsCard">
+      <h3>💡 Smart Tips for Today</h3>
+      <div id="tipsList"></div>
+    </div>
+
+    <!-- 5-Day Forecast Card -->
+    <div class="forecast-card" id="forecastCard">
+      <h3>📅 5-Day Forecast</h3>
+      <div id="forecastList"></div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript file handles all the logic -->
+  <script src="script.js"></script>
+</body>
+</html>
