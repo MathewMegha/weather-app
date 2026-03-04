@@ -2,7 +2,7 @@
 //   Megha Mathew's Weather App — JavaScript
 // =============================================
 
-// ---- Your OpenWeatherMap API Key ----
+// ----  OpenWeatherMap API Key ----
 const API_KEY = '03c1734bf5c4784d8d2aecec722237e6';
 
 // ---- Store temperatures so we can toggle C/F ----
